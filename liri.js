@@ -17,70 +17,122 @@ var Spotify = require('node-spotify-api');
         id: process.env.SPOTIFY_ID,
         secret: process.env.SPOTIFY_SECRET
     });
-var inquirer = require('inquirer');
+// var inquirer = require('inquirer');
 var request = require('request');
 var fs = require('fs');
 
+// variables for taking in LIRI commands
+var commands = process.argv;
+var liriCommand = commands[2];
+
+var userArg = '';
+for (var i = 3; i < commands.length; i++) {
+    userArg += commands[i] + ' ';
+}
+
 // logic for printing tweets from @MadamnMarkdown ////////////////////////////////////////////
-var params = {screen_name: 'MadamnMarkdown', count: 10};
-client.get('statuses/user_timeline', params, function(error, tweets, response) {
-    if (!error) {
-        var prettyPrintHandle = `--------------------\n` +
-            `@MadamnMarkdown's Tweet:\n`.cyan +
-            `--------------------\n\n`;
-        for (var i = 0; i < tweets.length; i++) {
-            console.log (
-                prettyPrintHandle + `Tweeted on: ` + tweets[i].created_at + `\n` + 
+function getTweets() {
+    var params = {screen_name: 'MadamnMarkdown', count: 10};
+    client.get('statuses/user_timeline', params, function(error, tweets, response) {
+        if (!error) {
+            var prettyPrintHandle = `\n--------------------\n` +
+                `@MadamnMarkdown's Tweet:\n`.cyan +
+                `--------------------\n\n`;
+            for (var i = 0; i < tweets.length; i++) {
+                console.log (
+                    prettyPrintHandle + `Tweeted on: ` + tweets[i].created_at + `\n` + 
+                    `Tweet body: ` + tweets[i].text + `\n` +
+                    `--------------------\n`
+                );
+
+                // append tweets to log here
+                fs.appendFile(`log.txt`, prettyPrintHandle + `Tweeted on: ` + tweets[i].created_at + `\n` + 
                 `Tweet body: ` + tweets[i].text + `\n` +
-                `--------------------\n`
-            );
-        } // closing for loop
+                `--------------------\n`, (err) => {
+                    if (err) throw err;
+                    console.log(`Tweets logged!`);
+                });
+        
+            } // closing for loop
 
-        // append tweets to log here
+        } else {
+            prettyPrintError = `----- Error getting tweets! ----- ` + error;
+            console.log(prettyPrintError);
 
-    } else {
-        prettyPrintError = `----- Error getting tweets! ----- ` + error;
-        console.log(prettyPrintError);
-
-        // append error to log here
-
-    }
-}); // closing twitter get function
+            // append error to log here
+            fs.appendFile(`log.txt`, prettyPrintError, (err) => {
+                if (err) throw err;
+                console.log(`----- Error logging tweets! ----- `.red);
+            });
+        }
+    });
+}; // closing getTweets function
 
 // logic for getting song info from spotify //////////////////////////////////////////////////
-spotify.search({ type: 'track', query: 'It Gets Better (With Time)' }, function(err, data) {
-    if (err) {
-      return console.log('----- Error getting song info! ----- ' + err);
-      
-      // append error to log here
+function getSongData(song) {
     
-    } // else condition here with condition for misspelled song title & append 2nd error string to log
-    var songData = data.tracks.items[0];
-    var prettyPrintSong = `--------------------\n` +
-        `Song Data:\n` +
-        `--------------------\n\n` +
-        `Title: ` + songData.name + `\n` +
-        `Artist: ` + songData.artists[0].name + `\n` +
-        `Album: ` + songData.album.name + `\n` +
-        `Listen Here: ` + songData.preview_url + `\n`;
+    // if user enters blank search, bless them with Al Green
+    var search;
+        if (song === '') {
+            search = 'What More Do You Want From Me';
+        } else {
+            search = song;
+        }
 
-    console.log(prettyPrintSong.green);
+    spotify.search({ type: 'track', query: search }, function(err, data) {
 
-    // append sondData to log here
+        if (err) {
+            // append error to log here
+            fs.appendFile(`log.txt`, `----- Error getting song data! -----`, (err) => {
+                if (err) throw err;
+            });
+            return console.log('----- Error getting song data! ----- ' + err);
+        
+        } // else condition here with condition for misspelled song title & append 2nd error string to log
+        var songData = data.tracks.items[0];
+        var prettyPrintSong = `--------------------\n` +
+            `Song Data:\n` +
+            `--------------------\n\n` +
+            `Title: ` + songData.name + `\n` +
+            `Artist: ` + songData.artists[0].name + `\n` +
+            `Album: ` + songData.album.name + `\n` +
+            `Listen Here: ` + songData.preview_url + `\n`;
 
-});
+        console.log(prettyPrintSong.green);
+
+        // append sondData to log here
+        fs.appendFile(`log.txt`, prettyPrintSong, (err) => {
+            if (err) throw err;
+            console.log(`Song Data logged!`);
+        });
+    });
+}; // closing getSongData function
+
+// logic for getting movie data //////////////////////////////////////////////////////////////
+function getMovieData() {
+    
+}; // closing getMovieData function
+
+// defining LIRI commands ////////////////////////////////////////////////////////////////////
+switch (liriCommand) {
+    case 'my-tweets':
+        getTweets();
+        break;
+    case 'spotify-this-song':
+        getSongData(userArg);
+        break;
+    // case 'movie-this':
+    //     getMovieData(userArg);
+    //     break;
+    // case 'do-what-it-says':
+    //     causeISaidSo();
+    //     break;
+}
 
 // commands
-    // my-tweets
-        // log tweets to log.txt
-        // if error, print error to console
-        // if error, log error to log.txt
-    
     // spotify-this-song
-        // log song data to log.txt
         // if error, print error to console
-        // if error, log error to log.txt
-        // if user runs blank query, get song from random.txt 
+        // if error, log error to log.txt 
 
     // movie-this
         // prints movie name 
@@ -94,6 +146,9 @@ spotify.search({ type: 'track', query: 'It Gets Better (With Time)' }, function(
         // log movie data to log.txt
         // if error, print error to console
         // if error, log error to log.txt
+        
+    // do-what-it-says
+        // if user runs blank query, get song from random.txt
         // if user runs blank query, print stats on black panther (from random.txt?)
 
-    // do-what-it-says
+    // print list of commands if user puts in unrecognized command
