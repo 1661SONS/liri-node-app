@@ -16,4 +16,4 @@
 
 * node liri.js spotify-this-song
 
-* node liri.js movie this
+* node liri.js movie-this
