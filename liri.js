@@ -1,4 +1,39 @@
-require("dotenv").config();
+// getting required keys for twitter and spotify
+require('dotenv').config();
+
+// loading node modules
+var Twitter = require('twitter');
+var Spotify = require('node-spotify-api');
+var inquirer = require('inquirer');
+var request = require('request');
+var fs = require('fs');
+
+// loading twitter keys
+var client = new Twitter({
+    consumer_key: process.env.TWITTER_CONSUMER_KEY,
+    consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+    access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+    access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+});
+
+// logic for printing tweets from @MadamnMarkdown
+var params = {screen_name: 'MadamnMarkdown', count: 10};
+client.get('statuses/user_timeline', params, function(error, tweets, response) {
+    if (!error) {
+        var prettyPrint = `--------------------\n` +
+            `@MadamnMarkdown's Tweets:\n` +
+            `--------------------\n\n`;
+        for (var i = 0; i < tweets.length; i++) {
+            // this is printing 1, then 1,2 then 1,2,3 etc
+            console.log (
+                prettyPrint += `Tweeted on: ` + tweets[i].created_at + `\n` + 
+                `Tweet body: ` + tweets[i].text + `\n` +
+                `--------------------\n`
+            );
+        } // closing for loop
+    }
+}); // closing get
+
 
 // commands
     // my-tweets
