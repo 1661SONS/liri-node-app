@@ -2,49 +2,85 @@
 require('dotenv').config();
 
 // loading node modules
+var colors = require('colors');
 var Twitter = require('twitter');
+    // loading twitter keys
+    var client = new Twitter({
+        consumer_key: process.env.TWITTER_CONSUMER_KEY,
+        consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+        access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+        access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+    });
 var Spotify = require('node-spotify-api');
+    // loading spotify keys
+    var spotify = new Spotify({
+        id: process.env.SPOTIFY_ID,
+        secret: process.env.SPOTIFY_SECRET
+    });
 var inquirer = require('inquirer');
 var request = require('request');
 var fs = require('fs');
 
-// loading twitter keys
-var client = new Twitter({
-    consumer_key: process.env.TWITTER_CONSUMER_KEY,
-    consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-    access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
-    access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-});
-
-// logic for printing tweets from @MadamnMarkdown
+// logic for printing tweets from @MadamnMarkdown ////////////////////////////////////////////
 var params = {screen_name: 'MadamnMarkdown', count: 10};
 client.get('statuses/user_timeline', params, function(error, tweets, response) {
     if (!error) {
-        var prettyPrint = `--------------------\n` +
-            `@MadamnMarkdown's Tweets:\n` +
+        var prettyPrintHandle = `--------------------\n` +
+            `@MadamnMarkdown's Tweet:\n`.cyan +
             `--------------------\n\n`;
         for (var i = 0; i < tweets.length; i++) {
-            // this is printing 1, then 1,2 then 1,2,3 etc
             console.log (
-                prettyPrint += `Tweeted on: ` + tweets[i].created_at + `\n` + 
+                prettyPrintHandle + `Tweeted on: ` + tweets[i].created_at + `\n` + 
                 `Tweet body: ` + tweets[i].text + `\n` +
                 `--------------------\n`
             );
         } // closing for loop
-    }
-}); // closing get
 
+        // append tweets to log here
+
+    } else {
+        prettyPrintError = `----- Error getting tweets! ----- ` + error;
+        console.log(prettyPrintError);
+
+        // append error to log here
+
+    }
+}); // closing twitter get function
+
+// logic for getting song info from spotify //////////////////////////////////////////////////
+spotify.search({ type: 'track', query: 'It Gets Better (With Time)' }, function(err, data) {
+    if (err) {
+      return console.log('----- Error getting song info! ----- ' + err);
+      
+      // append error to log here
+    
+    } // else condition here with condition for misspelled song title & append 2nd error string to log
+    var songData = data.tracks.items[0];
+    var prettyPrintSong = `--------------------\n` +
+        `Song Data:\n` +
+        `--------------------\n\n` +
+        `Title: ` + songData.name + `\n` +
+        `Artist: ` + songData.artists[0].name + `\n` +
+        `Album: ` + songData.album.name + `\n` +
+        `Listen Here: ` + songData.preview_url + `\n`;
+
+    console.log(prettyPrintSong.green);
+
+    // append sondData to log here
+
+});
 
 // commands
     // my-tweets
-        // prints last 20 tweets and their dates tweeted from @MadamnMarkdown
+        // log tweets to log.txt
+        // if error, print error to console
+        // if error, log error to log.txt
     
     // spotify-this-song
-        // prints song name,
-        // artist(s)
-        // song album
-        // link to song preview
-        // if song can't be found, default to 'what more do you want from me' by al green
+        // log song data to log.txt
+        // if error, print error to console
+        // if error, log error to log.txt
+        // if user runs blank query, get song from random.txt 
 
     // movie-this
         // prints movie name 
@@ -55,6 +91,9 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
         // Language of the movie.
         // Plot of the movie.
         // Actors in the movie.
-        // if no movie, print stats on black panther
+        // log movie data to log.txt
+        // if error, print error to console
+        // if error, log error to log.txt
+        // if user runs blank query, print stats on black panther (from random.txt?)
 
     // do-what-it-says
