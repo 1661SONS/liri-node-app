@@ -30,30 +30,37 @@ for (var i = 3; i < commands.length; i++) {
     userArg += commands[i] + ' ';
 }
 
+// pring list of commands for user ///////////////////////////////////////////////////////////
+var commandList = `--------------------\n` +
+    `Get started with these commands:\n` +
+    `--------------------\n\n` +
+    `Print Tweets: `.bold.cyan + `node liri.js my-tweets` +
+    `\nPrint Song Info: `.bold.green + `node liri.js spotify-song-name "TYPE SONG TITLE HERE"` +
+    `\nPrint Movie Info: `.bold.magenta + `node liri.js move-this "TYPE MOVIE TITLE HERE"` +
+    `\nPrint Dev Default: `.bold + `node liri.js do-what-it-says`;
+console.log(commandList);
+
 // logic for printing tweets from @MadamnMarkdown ////////////////////////////////////////////
 function getTweets() {
     var params = {screen_name: 'MadamnMarkdown', count: 10};
     client.get('statuses/user_timeline', params, function(error, tweets, response) {
         if (!error) {
             var prettyPrintHandle = `\n--------------------\n` +
-                `@MadamnMarkdown's Tweet:\n`.cyan +
+                `@MadamnMarkdown Tweeted:\n`.cyan +
                 `--------------------\n\n`;
             for (var i = 0; i < tweets.length; i++) {
-                console.log (
-                    prettyPrintHandle + `Tweeted on: ` + tweets[i].created_at + `\n` + 
-                    `Tweet body: ` + tweets[i].text + `\n` +
-                    `--------------------\n`
-                );
+                var prettyPrintTweets = `Tweeted on: ` + tweets[i].created_at + `\n` + 
+                `Tweet body: ` + tweets[i].text + `\n` +
+                `--------------------\n`;
+                console.log (prettyPrintHandle + prettyPrintTweets);
 
                 // append tweets to log here
-                fs.appendFile(`log.txt`, prettyPrintHandle + `Tweeted on: ` + tweets[i].created_at + `\n` + 
-                `Tweet body: ` + tweets[i].text + `\n` +
-                `--------------------\n`, (err) => {
+                fs.appendFile(`log.txt`, prettyPrintHandle + prettyPrintTweets, (err) => {
                     if (err) throw err;
-                    console.log(`Tweets logged!`);
                 });
         
             } // closing for loop
+            console.log(`Tweets logged!`);
 
         } else {
             prettyPrintError = `----- Error getting tweets! ----- ` + error;
@@ -112,7 +119,7 @@ function getSongData(song) {
 function getMovieData(movie) {
     var search;
     if (movie === '') {
-        search = 'Black Panther';
+        search = 'The Dark Knight';
     } else {
         search = movie;
     }
@@ -157,6 +164,32 @@ function getMovieData(movie) {
     }); // closing movie request function
 };
 
+// logic for an indecisive user ///////////////////////////////////////////////////////////////
+function causeISaidSo() {
+    fs.readFile(`random.txt`, `utf8`, function(error, data) {
+        if (error) {
+            console.log(`----- Error reading random.txt! ----- ` + error);
+            return;
+        } else {
+            var cmdString = data.split(',');
+            var cmd = cmdString[0].trim();
+            var param = cmdString[1].trim();
+
+            switch (cmd) {
+                case 'my-tweets':
+                    getTweets();
+                    break;
+                case 'spotify-this-song':
+                    getSongData(param);
+                    break;
+                case 'movie-this':
+                    getMovieData(param);
+                    break;
+            }
+        }
+    });
+}; // closing causeISaidSo function
+
 // defining LIRI commands ////////////////////////////////////////////////////////////////////
 switch (liriCommand) {
     case 'my-tweets':
@@ -168,31 +201,7 @@ switch (liriCommand) {
     case 'movie-this':
         getMovieData(userArg);
         break;
-    // case 'do-what-it-says':
-    //     causeISaidSo();
-    //     break;
+    case 'do-what-it-says':
+        causeISaidSo();
+        break;
 }
-
-// commands
-    // spotify-this-song
-        // if error, print error to console
-        // if error, log error to log.txt 
-
-    // movie-this
-        // prints movie name 
-        // Year the movie came out.
-        // IMDB Rating of the movie.
-        // Rotten Tomatoes Rating of the movie.
-        // Country where the movie was produced.
-        // Language of the movie.
-        // Plot of the movie.
-        // Actors in the movie.
-        // log movie data to log.txt
-        // if error, print error to console
-        // if error, log error to log.txt
-        
-    // do-what-it-says
-        // if user runs blank query, get song from random.txt
-        // if user runs blank query, print stats on black panther (from random.txt?)
-
-    // print list of commands if user puts in unrecognized command

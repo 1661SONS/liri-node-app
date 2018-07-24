@@ -1,14 +1,6 @@
---------------------
-Song Data:
---------------------
-
-Title: It Gets Better (With Time)
-Artist: The Internet
-Album: Hive Mind
-Listen Here: https://p.scdn.co/mp3-preview/397f006a150bd0dfd899a1ec53673081ae631615?cid=9aa609b9bc554625965b6e20f8324fdf
 
 --------------------
-[36m@MadamnMarkdown's Tweet:
+[36m@MadamnMarkdown Tweeted:
 [39m--------------------
 
 Tweeted on: Tue Jul 24 02:10:14 +0000 2018
@@ -16,7 +8,7 @@ Tweet body: RT @Gizmodo: Common food additives could have 'lifelong' health cons
 --------------------
 
 --------------------
-[36m@MadamnMarkdown's Tweet:
+[36m@MadamnMarkdown Tweeted:
 [39m--------------------
 
 Tweeted on: Tue Jul 24 01:19:52 +0000 2018
@@ -24,7 +16,7 @@ Tweet body: RT @EFF: From privacy to patents, and from antitrust to #netneutrali
 --------------------
 
 --------------------
-[36m@MadamnMarkdown's Tweet:
+[36m@MadamnMarkdown Tweeted:
 [39m--------------------
 
 Tweeted on: Tue Jul 24 01:19:41 +0000 2018
@@ -32,7 +24,7 @@ Tweet body: RT @WIRED: If tech really wants to help the homeless, it should hire
 --------------------
 
 --------------------
-[36m@MadamnMarkdown's Tweet:
+[36m@MadamnMarkdown Tweeted:
 [39m--------------------
 
 Tweeted on: Mon Jul 23 22:46:32 +0000 2018
@@ -40,7 +32,7 @@ Tweet body: RT @WIRED: This one legged robot might save your life someday. https
 --------------------
 
 --------------------
-[36m@MadamnMarkdown's Tweet:
+[36m@MadamnMarkdown Tweeted:
 [39m--------------------
 
 Tweeted on: Mon Jul 23 22:42:21 +0000 2018
@@ -48,7 +40,7 @@ Tweet body: RT @engadget: Olympics officials take baby steps toward recognizing 
 --------------------
 
 --------------------
-[36m@MadamnMarkdown's Tweet:
+[36m@MadamnMarkdown Tweeted:
 [39m--------------------
 
 Tweeted on: Mon Jul 23 22:40:43 +0000 2018
@@ -56,7 +48,7 @@ Tweet body: RT @thedalstonyears: Alice was just 24 when her ex broke into her ho
 --------------------
 
 --------------------
-[36m@MadamnMarkdown's Tweet:
+[36m@MadamnMarkdown Tweeted:
 [39m--------------------
 
 Tweeted on: Mon Jul 23 22:40:23 +0000 2018
@@ -64,7 +56,7 @@ Tweet body: RT @misszing: Over the last three years, 49 women in the UK were kil
 --------------------
 
 --------------------
-[36m@MadamnMarkdown's Tweet:
+[36m@MadamnMarkdown Tweeted:
 [39m--------------------
 
 Tweeted on: Mon Jul 23 22:38:03 +0000 2018
@@ -72,7 +64,7 @@ Tweet body: RT @EFF: The Kelsey Smith Act tries to correct a tragedy that occurr
 --------------------
 
 --------------------
-[36m@MadamnMarkdown's Tweet:
+[36m@MadamnMarkdown Tweeted:
 [39m--------------------
 
 Tweeted on: Mon Jul 23 22:37:45 +0000 2018
@@ -80,7 +72,7 @@ Tweet body: RT @mashable: This Gamecube could be your next computer https://t.co
 --------------------
 
 --------------------
-[36m@MadamnMarkdown's Tweet:
+[36m@MadamnMarkdown Tweeted:
 [39m--------------------
 
 Tweeted on: Mon Jul 23 02:24:02 +0000 2018
@@ -90,102 +82,34 @@ Tweet body: git commit -m "initial tweet"
 Song Data:
 --------------------
 
-Title: It Gets Better (With Time)
+Title: Hold On
 Artist: The Internet
 Album: Hive Mind
-Listen Here: https://p.scdn.co/mp3-preview/397f006a150bd0dfd899a1ec53673081ae631615?cid=9aa609b9bc554625965b6e20f8324fdf
---------------------
-Song Data:
---------------------
-
-Title: It Gets Better (With Time)
-Artist: The Internet
-Album: Hive Mind
-Listen Here: https://p.scdn.co/mp3-preview/397f006a150bd0dfd899a1ec53673081ae631615?cid=9aa609b9bc554625965b6e20f8324fdf
---------------------
-Song Data:
---------------------
-
-Title: It Gets Better (With Time)
-Artist: The Internet
-Album: Hive Mind
-Listen Here: https://p.scdn.co/mp3-preview/397f006a150bd0dfd899a1ec53673081ae631615?cid=9aa609b9bc554625965b6e20f8324fdf
---------------------
-Song Data:
---------------------
-
-Title: Unforgettable
-Artist: French Montana
-Album: Jungle Rules
-Listen Here: https://p.scdn.co/mp3-preview/3814de3ede7445566a5b176bb23120af44da62d8?cid=9aa609b9bc554625965b6e20f8324fdf
---------------------
-Song Data:
---------------------
-
-Title: Jungle
-Artist: Drake
-Album: If You're Reading This It's Too Late
-Listen Here: null
---------------------
-Song Data:
---------------------
-
-Title: It Gets Better (With Time)
-Artist: The Internet
-Album: Hive Mind
-Listen Here: https://p.scdn.co/mp3-preview/397f006a150bd0dfd899a1ec53673081ae631615?cid=9aa609b9bc554625965b6e20f8324fdf
+Listen Here: https://p.scdn.co/mp3-preview/48d022a40c4f113dcf04856bdfd2b5c18042598f?cid=9aa609b9bc554625965b6e20f8324fdf
 --------------------
 Movie Data:
 --------------------
 
-Title: Black Panther
-Year Released: 16 Feb 2018
-IMDB Rating: 7.5
-Rotten Tomatoes Rating: N/A
-Country Where Produced: USA
-Language: Swahili, Nama, English, Xhosa, Korean
-Plot: After the events of Captain America: Civil War, King T'Challa returns home to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne from factions within his own country. When two foes conspire to destroy Wakanda, the hero known as Black Panther must team up with C.I.A. agent Everett K. Ross and members of the Dora Milaje, Wakanadan special forces, to prevent Wakanda from being dragged into a world war.
-Actors: Chadwick Boseman, Michael B. Jordan, Lupita Nyong'o, Danai Gurira
---------------------
-Movie Data:
---------------------
-
-[4mTitle: [24mBlack Panther
-Year Released: 16 Feb 2018
-IMDB Rating: 7.5
-Rotten Tomatoes Rating: N/A
-Country Where Produced: USA
-Language: Swahili, Nama, English, Xhosa, Korean
-Plot: After the events of Captain America: Civil War, King T'Challa returns home to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne from factions within his own country. When two foes conspire to destroy Wakanda, the hero known as Black Panther must team up with C.I.A. agent Everett K. Ross and members of the Dora Milaje, Wakanadan special forces, to prevent Wakanda from being dragged into a world war.
-Actors: Chadwick Boseman, Michael B. Jordan, Lupita Nyong'o, Danai Gurira
---------------------
-Movie Data:
---------------------
-
-[35mTitle: [39mBlack Panther
-[35mYear Released: [39m16 Feb 2018
-[35mIMDB Rating: [39m7.5
-[35mRotten Tomatoes Rating: [39mN/A
-[35mCountry Where Produced: [39mUSA
-[35mLanguage: [39mSwahili, Nama, English, Xhosa, Korean
-[35mPlot: [39mAfter the events of Captain America: Civil War, King T'Challa returns home to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne from factions within his own country. When two foes conspire to destroy Wakanda, the hero known as Black Panther must team up with C.I.A. agent Everett K. Ross and members of the Dora Milaje, Wakanadan special forces, to prevent Wakanda from being dragged into a world war.
-[35mActors: [39mChadwick Boseman, Michael B. Jordan, Lupita Nyong'o, Danai Gurira
---------------------
-Movie Data:
---------------------
-
-[35mTitle: [39mBlack Panther
+[35mTitle: [39mWatchmen
 [35m
-Year Released: [39m16 Feb 2018
+Year Released: [39m06 Mar 2009
 [35m
-IMDB Rating: [39m7.5
+IMDB Rating: [39m7.6
 [35m
 Rotten Tomatoes Rating: [39mN/A
 [35m
 Country Where Produced: [39mUSA
 [35m
-Language: [39mSwahili, Nama, English, Xhosa, Korean
+Language: [39mEnglish
 [35m
-lot: [39mAfter the events of Captain America: Civil War, King T'Challa returns home to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne from factions within his own country. When two foes conspire to destroy Wakanda, the hero known as Black Panther must team up with C.I.A. agent Everett K. Ross and members of the Dora Milaje, Wakanadan special forces, to prevent Wakanda from being dragged into a world war.
+Plot: [39mIn a gritty and alternate 1985 the glory days of costumed vigilantes have been brought to a close by a government crackdown, but after one of the masked veterans is brutally murdered an investigation into the killer is initiated. The reunited heroes set out to prevent their own destruction, but in doing so discover a deeper and far more diabolical plot.
 [35m
-Actors: [39mChadwick Boseman, Michael B. Jordan, Lupita Nyong'o, Danai Gurira
+Actors: [39mMalin Akerman, Billy Crudup, Matthew Goode, Jackie Earle Haley
+--------------------
+Song Data:
+--------------------
+
+Title: What More Do You Want From Me
+Artist: Al Green
+Album: Lay It Down
+Listen Here: null
