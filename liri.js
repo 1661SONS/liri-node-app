@@ -109,9 +109,53 @@ function getSongData(song) {
 }; // closing getSongData function
 
 // logic for getting movie data //////////////////////////////////////////////////////////////
-function getMovieData() {
-    
-}; // closing getMovieData function
+function getMovieData(movie) {
+    var search;
+    if (movie === '') {
+        search = 'Black Panther';
+    } else {
+        search = movie;
+    }
+
+    // replace spaces in user's search query with + to make it work
+    search = search.split(' ').join('+');
+
+    var movieQuery = 'http://www.omdbapi.com/?t=' + search + '&plot=full&tomatoes=true&apikey=trilogy';
+    request(movieQuery, function(error, response, body) {
+        
+        if (!error && response.statusCode === 200) {
+
+            // save movie data in variable easier to work with
+            var movieData = JSON.parse(body);
+            var prettyPrintMovie = `--------------------\n` +
+                `Movie Data:\n` +
+                `--------------------\n\n` +
+                `Title: `.magenta + movieData.Title + `\n` +
+                `\nYear Released: `.magenta + movieData.Released + `\n` +
+                `\nIMDB Rating: `.magenta + movieData.imdbRating + `\n` +
+                `\nRotten Tomatoes Rating: `.magenta + movieData.tomatoRating + `\n` +
+                `\nCountry Where Produced: `.magenta + movieData.Country + `\n` +
+                `\nLanguage: `.magenta + movieData.Language + `\n` +
+                `\nPlot: `.magenta + movieData.Plot + `\n` +
+                `\nActors: `.magenta + movieData.Actors + `\n`;
+
+            console.log(prettyPrintMovie);
+
+            // log movie data to log.txt here
+            fs.appendFile(`log.txt`, prettyPrintMovie, (err) => {
+                if (err) throw err;
+            });
+
+        } else if (error || response.statusCode !== 200) {
+            // print error to console
+            console.log(`----- Error getting movie data! -----`);
+            // log error in log.txt
+            fs.appendFile(`log.txt`, `----- Error getting movie data! -----`, (error) => {
+                if (error) throw error;
+            });
+        }
+    }); // closing movie request function
+};
 
 // defining LIRI commands ////////////////////////////////////////////////////////////////////
 switch (liriCommand) {
@@ -121,9 +165,9 @@ switch (liriCommand) {
     case 'spotify-this-song':
         getSongData(userArg);
         break;
-    // case 'movie-this':
-    //     getMovieData(userArg);
-    //     break;
+    case 'movie-this':
+        getMovieData(userArg);
+        break;
     // case 'do-what-it-says':
     //     causeISaidSo();
     //     break;

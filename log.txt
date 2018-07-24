@@ -134,3 +134,58 @@ Title: It Gets Better (With Time)
 Artist: The Internet
 Album: Hive Mind
 Listen Here: https://p.scdn.co/mp3-preview/397f006a150bd0dfd899a1ec53673081ae631615?cid=9aa609b9bc554625965b6e20f8324fdf
+--------------------
+Movie Data:
+--------------------
+
+Title: Black Panther
+Year Released: 16 Feb 2018
+IMDB Rating: 7.5
+Rotten Tomatoes Rating: N/A
+Country Where Produced: USA
+Language: Swahili, Nama, English, Xhosa, Korean
+Plot: After the events of Captain America: Civil War, King T'Challa returns home to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne from factions within his own country. When two foes conspire to destroy Wakanda, the hero known as Black Panther must team up with C.I.A. agent Everett K. Ross and members of the Dora Milaje, Wakanadan special forces, to prevent Wakanda from being dragged into a world war.
+Actors: Chadwick Boseman, Michael B. Jordan, Lupita Nyong'o, Danai Gurira
+--------------------
+Movie Data:
+--------------------
+
+[4mTitle: [24mBlack Panther
+Year Released: 16 Feb 2018
+IMDB Rating: 7.5
+Rotten Tomatoes Rating: N/A
+Country Where Produced: USA
+Language: Swahili, Nama, English, Xhosa, Korean
+Plot: After the events of Captain America: Civil War, King T'Challa returns home to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne from factions within his own country. When two foes conspire to destroy Wakanda, the hero known as Black Panther must team up with C.I.A. agent Everett K. Ross and members of the Dora Milaje, Wakanadan special forces, to prevent Wakanda from being dragged into a world war.
+Actors: Chadwick Boseman, Michael B. Jordan, Lupita Nyong'o, Danai Gurira
+--------------------
+Movie Data:
+--------------------
+
+[35mTitle: [39mBlack Panther
+[35mYear Released: [39m16 Feb 2018
+[35mIMDB Rating: [39m7.5
+[35mRotten Tomatoes Rating: [39mN/A
+[35mCountry Where Produced: [39mUSA
+[35mLanguage: [39mSwahili, Nama, English, Xhosa, Korean
+[35mPlot: [39mAfter the events of Captain America: Civil War, King T'Challa returns home to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne from factions within his own country. When two foes conspire to destroy Wakanda, the hero known as Black Panther must team up with C.I.A. agent Everett K. Ross and members of the Dora Milaje, Wakanadan special forces, to prevent Wakanda from being dragged into a world war.
+[35mActors: [39mChadwick Boseman, Michael B. Jordan, Lupita Nyong'o, Danai Gurira
+--------------------
+Movie Data:
+--------------------
+
+[35mTitle: [39mBlack Panther
+[35m
+Year Released: [39m16 Feb 2018
+[35m
+IMDB Rating: [39m7.5
+[35m
+Rotten Tomatoes Rating: [39mN/A
+[35m
+Country Where Produced: [39mUSA
+[35m
+Language: [39mSwahili, Nama, English, Xhosa, Korean
+[35m
+lot: [39mAfter the events of Captain America: Civil War, King T'Challa returns home to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne from factions within his own country. When two foes conspire to destroy Wakanda, the hero known as Black Panther must team up with C.I.A. agent Everett K. Ross and members of the Dora Milaje, Wakanadan special forces, to prevent Wakanda from being dragged into a world war.
+[35m
+Actors: [39mChadwick Boseman, Michael B. Jordan, Lupita Nyong'o, Danai Gurira
